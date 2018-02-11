@@ -1,6 +1,6 @@
 # 通过定义PHP Doc规则生成API文档
 
-[![GitHub forks](https://img.shields.io/github/forks/mumbaicat/makeapidoc.svg?style=plastic)](https://github.com/liluoao/api-doc/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/liluoao/api-doc.svg?style=for-the-badge)](https://github.com/liluoao/api-doc/stargazers) [![GitHub forks](https://img.shields.io/github/forks/liluoao/api-doc.svg?style=for-the-badge)](https://github.com/liluoao/api-doc/network) [![Packagist](https://img.shields.io/packagist/v/liluoao/api-doc.svg?style=for-the-badge)](https://packagist.org/packages/liluoao/api-doc) [![GitHub license](https://img.shields.io/github/license/liluoao/api-doc.svg?style=for-the-badge)](https://github.com/liluoao/api-doc/blob/master/LICENSE)
 ----
 
 ### 规则:
@@ -15,11 +15,15 @@
 
 ### 使用方法：
 
-1. 引入核心库
+1. 引入本库
+```
+composer require liluoao/api-doc
+```
+或直接下载源码
 ```php
-require 'src/ApiDoc.php';
-//or
 use your-namespace\ApiDoc;
+//or
+require 'src/ApiDoc.php';
 ```
 
 2. 实例化核心类
@@ -34,7 +38,7 @@ $apiDoc = new ApiDoc('test');
 >包括你的文档名，和 `snake_case` 转换 `camelCase` 的配置
 ```php
 $apiDoc->setName('example');
-$apiDoc->setCamelCase2SnakeCaseConfig(false, false, 0, 0);
+$apiDoc->setCamel2SnakeConfig(false, false, 0, 0);
 ```
 
 4. 执行
@@ -60,3 +64,5 @@ public function hello(string $name, string $say): string {
 ```
 #### 结果：
 ![example](https://raw.githubusercontent.com/liluoao/api-doc/master/test/example.png)
+
+>注：生成后引入LayUI的路径需根据你生成路径修改
